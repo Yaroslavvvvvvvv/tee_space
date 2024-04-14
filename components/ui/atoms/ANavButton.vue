@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import {defineProps} from 'vue';
+import { defineProps } from 'vue'
 
 defineProps({
   title: String,
-});
+})
 </script>
 
 <template>
-  <button class="bg-black text-white text-sm py-2 px-6 rounded-xl hover:opacity-80 transition">
+  <button class="rounded-xl bg-black px-6 py-2 text-sm text-white transition hover:opacity-80">
     {{ title }}
   </button>
 </template>
 
 <style scoped>
-
 </style>
