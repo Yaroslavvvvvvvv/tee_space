@@ -6,12 +6,14 @@ import {
   PopoverGroup,
 } from '@headlessui/vue'
 import {
-  Bars3Icon,
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
-import MNavbar from '~/components/ui/molecules/MNavbar.vue'
-import ANavButton from '~/components/ui/atoms/ANavButton.vue'
+import MNavbar from '~/components/MNavbar.vue'
 import ANavbarArrow from '~/components/ui/atoms/ANavbarArrow.vue'
+import ALogo from '~/components/ui/atoms/ALogo.vue'
+import ANavButton from '~/components/ui/atoms/ANavButton.vue'
+import ACrossButton from '~/components/ui/atoms/ACrossButton.vue'
+import ANavMagnifier from '~/components/ui/atoms/ANavMagnifier.vue'
 
 const mobileMenuOpen = ref(false)
 </script>
@@ -20,19 +22,10 @@ const mobileMenuOpen = ref(false)
   <header class="bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="/public/images/logo_tee_space.svg" alt="logo">
-        </a>
+        <ALogo />
       </div>
       <div class="flex lg:hidden">
-        <button
-          type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          @click="mobileMenuOpen = true"
-        >
-          <span class="sr-only">Open main menu</span>
-          <Bars3Icon class="size-6" aria-hidden="true" />
-        </button>
+        <ACrossButton @button-click="mobileMenuOpen = true" />
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-4">
         <MNavbar title="Home">
@@ -51,15 +44,7 @@ const mobileMenuOpen = ref(false)
           <ANavbarArrow />
         </MNavbar>
         <MNavbar>
-          <svg
-            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6"
-          >
-            <path
-              stroke-linecap="round" stroke-linejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-          </svg>
+          <ANavMagnifier />
         </MNavbar>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -100,7 +85,7 @@ const mobileMenuOpen = ref(false)
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="/public/images/logo_tee_space.svg" alt="logo">
+            <img class="h-8 w-auto" src="/public/images/logo_tee_space.png" alt="logo">
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
